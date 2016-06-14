@@ -17,6 +17,7 @@ module Attachinary
       options[:attachinary] = model.send("#{relation}_metadata")
 
       options[:cloudinary] ||= {}
+      options[:cloudinary][:type] = 'private'
       options[:cloudinary][:tags] ||= []
       options[:cloudinary][:tags]<< "#{Rails.env}_env"
       options[:cloudinary][:tags]<< Attachinary::TMPTAG
